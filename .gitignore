@@ -1,0 +1,14 @@
+# History files
+.Rhistory
+
+# Example code in package build process
+*-Ex.R
+
+# Results of the build process
+pkg/
+pkg.Rcheck/
+proteomics_*.tar.gz
+
+# Files
+*.swp
+*.pdf
