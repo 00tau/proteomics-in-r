@@ -188,6 +188,7 @@ pVioline <- function (dat, target) {
            + xlab(expression("Channel"))
            + ylab(expression("Standardised abundance"))
            + theme(axis.text = element_text(colour = "black"), legend.position="none")
+           + facet_wrap( ~experiment)
            )
 }
 
