@@ -188,6 +188,7 @@ pVioline <- function (dat, target) {
            + xlab(expression("Channel"))
            + ylab(expression("Standardised abundance"))
            + theme(axis.text = element_text(colour = "black"), legend.position="none")
+           + facet_wrap( ~experiment)
            )
 }
 
@@ -221,7 +222,7 @@ avrgLoading <- function(dwide) {
 #' @export
 addLoadings <- function (dwide, byRef=F) {
     avrg <- avrgLoading(dwide)
-    trgt <- ifelse(  is.na(attr(avrg, "reference") | !byRef)
+    trgt <- ifelse(  is.na(attr(avrg, "reference")) | !byRef
                    , 0
                    , mean(as.vector(log(avrg[,attr(avrg, "reference")]))))
     attr(dwide, "loadings") <- avrg
